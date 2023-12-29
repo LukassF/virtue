@@ -81,10 +81,10 @@ body {
       font-size: 0.9em;
       padding: 10px;
       margin: 0;
-      writing-mode: vertical-rl;
+      writing-mode: vertical-lr;
       text-orientation: mixed;
       opacity: 0.3;
-      transform: rotate(180deg);
+      transform: rotate(180deg) !important;
 
       @media screen and (max-width: 620px) {
         font-size: 0.7em;
@@ -92,7 +92,7 @@ body {
 
       @media screen and (max-width: 600px) {
         writing-mode: horizontal-tb;
-        transform: none;
+        transform: none !important;
         padding: 0;
       }
     }

@@ -1290,7 +1290,7 @@ template {
   height: 100%;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  grid-template-rows: 1fr 1fr 4fr 1fr;
+  grid-template-rows: 1fr 1fr 3fr 1fr;
   gap: 20px;
 }
 @media screen and (max-width: 600px) {
@@ -1301,10 +1301,9 @@ template {
   }
 }
 .contact section form div {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: stretch;
+  overflow: hidden;
+  display: grid;
+  grid-template-rows: max-content;
   gap: 5px;
   min-height: 50px;
 }
@@ -1319,13 +1318,15 @@ template {
   }
 }
 .contact section form div input {
-  padding: 6px 10px;
+  padding: 0px 10px;
   border: none;
   border-radius: 6px;
   background-color: rgba(255, 255, 255, 0.5);
   outline: none;
   font-weight: 100;
   color: #2e364a;
+  max-height: 50px;
+  font-size: 0.8em;
 }
 @media screen and (max-width: 600px) {
   .contact section form div input {
@@ -1335,8 +1336,6 @@ template {
 .contact section form div#mess-cont {
   grid-column-start: 1;
   grid-column-end: 3;
-  display: grid;
-  grid-template-rows: 1fr 8fr;
   justify-content: stretch;
 }
 @media screen and (max-width: 600px) {
@@ -1346,6 +1345,7 @@ template {
   }
 }
 .contact section form div#mess-cont textarea {
+  font-size: 0.8em;
   resize: none;
   padding: 6px 10px;
   border: none;
@@ -1356,10 +1356,12 @@ template {
   color: #2e364a;
 }
 .contact section form #send {
-  grid-column-start: 1;
-  grid-column-end: 3;
+  display: flex;
+  flex-direction: row;
   justify-content: center;
   align-items: center;
+  grid-column-start: 1;
+  grid-column-end: 3;
 }
 @media screen and (max-width: 600px) {
   .contact section form #send {
@@ -1472,10 +1474,10 @@ body::-webkit-scrollbar-thumb {
   font-size: 0.9em;
   padding: 10px;
   margin: 0;
-  writing-mode: vertical-rl;
+  writing-mode: vertical-lr;
   text-orientation: mixed;
   opacity: 0.3;
-  transform: rotate(180deg);
+  transform: rotate(180deg) !important;
 }
 @media screen and (max-width: 620px) {
   .page-indicator #page-name-cont p, .page-indicator-dark #page-name-cont p {
@@ -1485,7 +1487,7 @@ body::-webkit-scrollbar-thumb {
 @media screen and (max-width: 600px) {
   .page-indicator #page-name-cont p, .page-indicator-dark #page-name-cont p {
     writing-mode: horizontal-tb;
-    transform: none;
+    transform: none !important;
     padding: 0;
   }
 }

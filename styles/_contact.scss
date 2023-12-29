@@ -30,7 +30,7 @@
       height: 100%;
       display: grid;
       grid-template-columns: repeat(2, 1fr);
-      grid-template-rows: 1fr 1fr 4fr 1fr;
+      grid-template-rows: 1fr 1fr 3fr 1fr;
       gap: 20px;
 
       @media screen and (max-width: 600px) {
@@ -40,7 +40,9 @@
       }
 
       div {
-        @include flex(column, center, stretch);
+        overflow: hidden;
+        display: grid;
+        grid-template-rows: max-content;
         gap: 5px;
         min-height: 50px;
 
@@ -54,13 +56,15 @@
           }
         }
         input {
-          padding: 6px 10px;
+          padding: 0px 10px;
           border: none;
           border-radius: 6px;
           background-color: rgba(255, 255, 255, 0.5);
           outline: none;
           font-weight: 100;
           color: $secondary;
+          max-height: 50px;
+          font-size: 0.8em;
           //   min-height: 30px;
 
           @media screen and (max-width: 600px) {
@@ -71,8 +75,7 @@
         &#mess-cont {
           grid-column-start: 1;
           grid-column-end: 3;
-          display: grid;
-          grid-template-rows: 1fr 8fr;
+
           justify-content: stretch;
 
           @media screen and (max-width: 600px) {
@@ -81,6 +84,7 @@
           }
 
           textarea {
+            font-size: 0.8em;
             resize: none;
             padding: 6px 10px;
             border: none;
@@ -94,10 +98,9 @@
       }
 
       #send {
+        @include flex(row, center, center);
         grid-column-start: 1;
         grid-column-end: 3;
-        justify-content: center;
-        align-items: center;
 
         @media screen and (max-width: 600px) {
           grid-column-start: 1;
