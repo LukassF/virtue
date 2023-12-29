@@ -1326,7 +1326,6 @@ template {
   outline: none;
   font-weight: 100;
   color: #2e364a;
-  min-height: 30px;
 }
 @media screen and (max-width: 600px) {
   .contact section form div input {
