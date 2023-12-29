@@ -588,6 +588,7 @@ template {
   align-items: center;
   cursor: pointer;
   opacity: 0.7;
+  color: #2e364a;
 }
 #sidebar div footer a:hover {
   opacity: 1;
