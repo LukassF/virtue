@@ -47,6 +47,7 @@
         min-height: 50px;
 
         label {
+          overflow: hidden;
           color: $secondary;
           opacity: 0.8;
           font-size: 0.8em;

@@ -1308,6 +1308,7 @@ template {
   min-height: 50px;
 }
 .contact section form div label {
+  overflow: hidden;
   color: #2e364a;
   opacity: 0.8;
   font-size: 0.8em;
