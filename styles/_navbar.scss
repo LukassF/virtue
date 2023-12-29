@@ -1,0 +1,177 @@
+@use "./mixins" as *;
+
+#navbar {
+  overflow: hidden;
+  width: calc(100vw - 40px);
+  @include flex(row, space-between, center);
+  padding: 20px;
+  position: absolute;
+  z-index: 100;
+  top: 0;
+  left: 0;
+  color: $main;
+  mix-blend-mode: difference;
+
+  @media screen and (max-width: 600px) {
+    padding: 15px;
+    width: calc(100vw - 30px);
+    position: absolute !important;
+  }
+
+  //   @media screen and (width > 980px) {
+  //     position: sticky;
+  //     top: 0;
+  //   }
+
+  //   background-color: red;
+
+  h2 {
+    margin: 0;
+    padding: 0;
+    font-weight: 400;
+    font-size: 1.1em;
+    overflow: hidden;
+
+    @media screen and (max-width: 600px) {
+      font-size: 1em;
+    }
+  }
+
+  button {
+    overflow: hidden;
+    cursor: pointer;
+    border: none;
+    background-color: transparent;
+    color: white;
+    font-size: 1.2em;
+    opacity: 0.7;
+    transition: all 0.3s;
+
+    i {
+      overflow: hidden;
+    }
+
+    &:hover {
+      opacity: 1;
+    }
+
+    @media screen and (max-width: 600px) {
+      font-size: 1em;
+    }
+  }
+}
+
+#sidebar {
+  padding: 20px;
+  width: 400px;
+  max-width: calc(100vw - 40px);
+  height: calc(100vh - 40px);
+  background-color: $main;
+  border-left: solid $secondary 1.5px;
+  position: fixed;
+  z-index: 200;
+  top: 0;
+  right: 0;
+  transform: translateX(100%);
+  transition: transform 0.2s ease-in-out;
+
+  &.open {
+    transform: translateX(0);
+  }
+
+  #close_sdbr {
+    cursor: pointer;
+    border: none;
+    background-color: transparent;
+    color: $secondary;
+    font-size: 1.5em;
+    opacity: 0.6;
+    transition: all 0.3s;
+
+    i {
+      overflow: hidden;
+    }
+
+    &:hover {
+      opacity: 1;
+    }
+
+    @media screen and (max-width: 600px) {
+      font-size: 1em;
+    }
+  }
+
+  ul {
+    padding: 0px;
+
+    @include flex(column, center, stretch);
+    gap: 10px;
+
+    li {
+      cursor: pointer;
+      padding: 15px 10px;
+      position: relative;
+      color: $secondary;
+      transition: all 0.3s;
+
+      &:hover {
+        color: $ternary;
+
+        &::after {
+          background-color: $ternary;
+        }
+      }
+
+      &::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 1.5px;
+        border-radius: 500px;
+        background-color: $secondary;
+        transition: all 0.3s;
+      }
+    }
+  }
+
+  div {
+    position: absolute;
+    bottom: 20px;
+    @include flex(column, center, flex-start);
+    gap: 10px;
+
+    span {
+      @include flex(row, flex-start, center);
+      gap: 10px;
+      font-weight: 100;
+      font-size: 0.9em;
+      color: $secondary;
+
+      i {
+        opacity: 0.5;
+      }
+    }
+
+    footer {
+      @include flex(row, flex-start, center);
+      gap: 10px;
+      color: $secondary;
+      opacity: 0.6;
+
+      a {
+        width: 35px;
+        border: solid $secondary 1px;
+        aspect-ratio: 1/1;
+        @include flex(row, center, center);
+        cursor: pointer;
+        opacity: 0.7;
+
+        &:hover {
+          opacity: 1;
+        }
+      }
+    }
+  }
+}

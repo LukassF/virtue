@@ -1,0 +1,263 @@
+@use "./mixins" as *;
+
+.projects {
+  height: 100vh;
+  background-color: $secondary;
+  display: grid;
+  grid-template-columns: 1fr 4fr;
+
+  @media screen and (max-width: 780px) {
+    grid-template-columns: 1fr 3fr;
+  }
+
+  @media screen and (max-width: 600px) {
+    grid-template-columns: 1fr;
+    grid-template-rows: 5fr 1fr;
+  }
+
+  section {
+    display: grid;
+    grid-template-rows: 9fr 1fr;
+
+    @media screen and (max-width: 600px) {
+      grid-template-rows: 1fr;
+    }
+
+    article {
+      //   background-color: red;
+      width: 100%;
+      display: grid;
+      grid-template-columns: 1fr;
+      overflow: hidden;
+      position: relative;
+
+      //   @media screen and (max-width: 600px) {
+      //     overflow-x: auto;
+      //   }
+
+      #left,
+      #right {
+        transition: opacity 0.4s;
+        position: absolute;
+        background-color: transparent;
+        top: 50%;
+        transform: translateY(-50%);
+        border: none;
+        color: $main;
+        left: 15px;
+        font-size: 1.2em;
+        opacity: 0;
+        cursor: pointer;
+        z-index: 3;
+        &:hover {
+          opacity: 1;
+        }
+
+        @media screen and (max-width: 780px) {
+          font-size: 1em;
+        }
+
+        @media screen and (max-width: 600px) {
+          display: none;
+        }
+
+        &.disabled {
+          cursor: default;
+        }
+      }
+
+      #right {
+        left: auto;
+        right: 15px;
+      }
+
+      &:hover {
+        #left,
+        #right {
+          opacity: 0.6;
+
+          &.disabled {
+            opacity: 0;
+          }
+        }
+      }
+      #projects-cont {
+        width: calc(3 * (4 * 100vw / 5));
+        @media screen and (max-width: 780px) {
+          width: calc(9 * 100vw / 4);
+        }
+        @media screen and (max-width: 600px) {
+          width: 100vw;
+          transform: translateX(0%) !important;
+        }
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        transition: transform 0.3s ease;
+        scroll-snap-type: x mandatory;
+        overflow-x: auto;
+        .project {
+          overflow: hidden;
+          position: relative;
+          padding: 20px 40px;
+          scroll-snap-align: center;
+
+          display: grid;
+          grid-template-columns: 2fr 3fr;
+          justify-content: center;
+          align-items: center;
+          gap: 10px;
+
+          @media screen and (max-width: 800px) {
+            grid-template-columns: 1fr;
+          }
+
+          @media screen and (max-width: 600px) {
+            width: calc(100vw - 80px);
+          }
+
+          article {
+            &:first-child {
+              @include flex(row, center, center);
+              img {
+                filter: invert(100%) opacity(60%);
+                width: 90%;
+                height: 90%;
+                object-fit: contain;
+              }
+
+              @media screen and (max-width: 800px) {
+                position: absolute;
+                height: 80%;
+
+                img {
+                  filter: invert(100%) opacity(10%);
+                  object-fit: cover;
+                }
+              }
+            }
+
+            &:last-child {
+              @include flex(column, center, flex-start);
+              @media screen and (max-width: 800px) {
+                padding: 0px 20px;
+              }
+              @media screen and (max-width: 600px) {
+                padding: 0px;
+              }
+
+              h2 {
+                margin: 0;
+                padding: 0;
+                color: $main;
+                opacity: 0.8;
+                overflow: hidden;
+                @media screen and (max-width: 500px) {
+                  font-size: 1.2em;
+                }
+              }
+
+              h6 {
+                margin: 0;
+                padding: 0;
+                color: $main;
+                opacity: 0.5;
+                overflow: hidden;
+
+                @media screen and (max-width: 500px) {
+                  font-size: 0.6em;
+                }
+              }
+
+              span {
+                width: 100px;
+                height: 2px;
+                border-radius: 500px;
+                background-color: $main;
+                margin: 15px 0px;
+
+                @media screen and (max-width: 500px) {
+                  height: 1.5px;
+                }
+              }
+
+              p {
+                padding: 0;
+                margin: 0;
+                font-size: 0.8em;
+                color: $main;
+                opacity: 0.8;
+                width: 80%;
+                line-height: 1.5;
+
+                @media screen and (max-width: 500px) {
+                  font-size: 0.7em;
+                }
+
+                @media screen and (max-width: 900px) {
+                  width: 90%;
+                }
+
+                @media screen and (max-width: 600px) {
+                  width: 100%;
+                }
+              }
+
+              div {
+                margin-top: 20px;
+                @include flex(row, flex-start, center);
+                gap: 10px;
+
+                a {
+                  cursor: pointer;
+                  border: solid $main 1px;
+                  background-color: transparent;
+                  color: $main;
+                  padding: 10px;
+                  font-size: 0.8em;
+                  opacity: 0.5;
+
+                  &:hover {
+                    opacity: 1;
+                  }
+                }
+              }
+            }
+          }
+
+          &:first-child {
+            article {
+              &:first-child {
+                img {
+                  width: 75%;
+                  height: 75%;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+
+    #project-indicator {
+      @include flex(row, center, center);
+      gap: 12px;
+
+      @media screen and (max-width: 600px) {
+        display: none;
+      }
+
+      a {
+        width: 20px;
+        height: 2px;
+        border-radius: 500px;
+        background-color: $main;
+        opacity: 0.12;
+        transition: opacity 0.3s;
+
+        &.active {
+          opacity: 0.7;
+        }
+      }
+    }
+  }
+}

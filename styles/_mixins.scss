@@ -1,0 +1,22 @@
+@mixin flex($direction, $justify, $align) {
+  display: flex;
+  flex-direction: $direction;
+  justify-content: $justify;
+  align-items: $align;
+}
+
+$main: #e3e3e3;
+$secondary: #2e364a;
+$ternary: #a07d7e;
+
+@keyframes dash {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes cover {
+  to {
+    background-position: 0%;
+  }
+}

@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link
+      rel="icon"
+      type="image/svg+xml"
+      href="https://upload.wikimedia.org/wikipedia/commons/e/e8/V_Logo_SVG.svg"
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./styles/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Merriweather+Sans:wght@300;400;500;800&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"
+      defer
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"
+      defer
+    ></script>
+    <script
+      src="/js/vendor/gsap/src/minified/plugins/ScrollToPlugin.min.js"
+      defer
+    ></script>
+
+    <script
+      src="https://kit.fontawesome.com/f83777b1f5.js"
+      crossorigin="anonymous"
+    ></script>
+
+    <script
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"
+    ></script>
+    <script type="text/javascript">
+      (function () {
+        emailjs.init("qWcpIJq0ZIk5s3goi");
+      })();
+    </script>
+    <title>Virtue</title>
+  </head>
+  <body>
+    <main class="intro">
+      <div class="intro-content">
+        <img
+          class="mountain-image"
+          src="https://images.pexels.com/photos/933054/pexels-photo-933054.jpeg?cs=srgb&dl=pexels-joyston-judah-933054.jpg&fm=jpg"
+          alt="mountain-image"
+        />
+
+        <section class="intro-section">
+          <div>
+            <a></a>
+            <p>SINCE 2023</p>
+            <a></a>
+          </div>
+          <h1>VIRTUE</h1>
+          <button id="scroll-down">SCROLL DOWN</button>
+        </section>
+      </div>
+    </main>
+
+    <section id="content">
+      <aside id="sidebar">
+        <button id="close_sdbr">
+          <i class="fa fa-close"></i>
+        </button>
+
+        <ul>
+          <li onclick="goTo('hero')">HOME</li>
+          <li onclick="goTo('projects')">PROJECTS</li>
+          <li onclick="goTo('services')">SERVICES</li>
+          <li onclick="goTo('skills')">SKILLS</li>
+          <li onclick="goTo('contact')">CONTACT</li>
+        </ul>
+
+        <div>
+          <span><i class="fa fa-phone"></i> +48 798 767 199</span>
+          <span><i class="fa fa-envelope"></i> szkulkerolf@gmail.com</span>
+          <footer>
+            <a
+              href="https://www.linkedin.com/in/%C5%82ukasz-florek-37784b279/"
+              target="_blank"
+              ><i class="fa fa-linkedin"></i
+            ></a>
+            <a href="https://github.com/LukassF" target="_blank"
+              ><i class="fa fa-github"></i
+            ></a>
+          </footer>
+        </div>
+      </aside>
+      <nav id="navbar">
+        <h2>VIRTUE</h2>
+
+        <button id="open_sdbr">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+      </nav>
+
+      <!-- ----------------- -->
+      <main class="hero">
+        <aside class="page-indicator">
+          <h1 class="pi1">01</h1>
+          <div id="page-name-cont">
+            <div class="pi1"></div>
+            <p class="pi1">ABOUT ME</p>
+          </div>
+        </aside>
+
+        <section>
+          <article>
+            <h2 class="hero-el">I'M ŁUKASZ, A DEVELOPER</h2>
+            <div class="hero-el"></div>
+            <p class="hero-el">
+              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nisi
+              tempora molestiae odio perferendis iusto, totam id architecto
+              magni quo quidem inventore itaque eius minima et deleniti illo
+              laboriosam, repudiandae quos! Lorem ipsum dolor sit amet
+              consectetur adipisicing elit.
+            </p>
+          </article>
+          <article>
+            <img
+              src="./assets/lukasz_tr.png"
+              alt="my-image"
+              class="profile-img"
+            />
+          </article>
+        </section>
+      </main>
+
+      <!-- ----------------- -->
+      <main class="projects">
+        <aside class="page-indicator-dark">
+          <h1 class="pi2">02</h1>
+          <div id="page-name-cont">
+            <div class="pi2"></div>
+            <p class="pi2">PROJECTS</p>
+          </div>
+        </aside>
+
+        <section>
+          <article>
+            <button id="left" class="disabled" onclick="slideLeft()">
+              <i class="fa fa-chevron-left"></i>
+            </button>
+            <div id="projects-cont">
+              <div class="project">
+                <article>
+                  <img
+                    class="project-img"
+                    src="./assets/headphones.png"
+                    alt="headphones-image"
+                    width="80%"
+                    height="80%"
+                  />
+                </article>
+                <article>
+                  <h2 class="project-el">MUSIC APP</h2>
+                  <h6 class="project-el">TECHSTACK: VUE 3, SCSS, JAVASCRIPT</h6>
+                  <span class="project-el"></span>
+                  <p class="project-el">
+                    Music-App is a Spotify Clone music app for streaming music
+                    and manipulating music data. It has all of the features
+                    typical for spotify, such as playing songs, creating
+                    playlists and listening to favourite artists or their
+                    albums. The free version doesn't include streaming music so
+                    make sure you have a premium Spotify account to see the full
+                    capabilities of the app.
+                  </p>
+                  <div>
+                    <a
+                      class="project-el-button"
+                      href="https://music-clone-lukas.vercel.app/"
+                      target="_blank"
+                      >VISIT</a
+                    >
+                    <a
+                      class="project-el-button"
+                      href="https://github.com/LukassF/spotify-clone"
+                      target="_blank"
+                      >CODE</a
+                    >
+                  </div>
+                </article>
+              </div>
+              <div class="project">
+                <article>
+                  <img src="./assets/cart.png" alt="cart-image" />
+                </article>
+                <article>
+                  <h2>ECOMMERCE</h2>
+                  <h6>TECHSTACK: ANGULAR, TAILWIND, EXPRESS JS</h6>
+                  <span></span>
+                  <p>
+                    Crafting ecommerce websites with seamless payment
+                    integration is a meticulous dance of user-centric design and
+                    secure, efficient functionality. I approach the development
+                    of ecommerce platforms with a dual focus: creating an
+                    engaging, intuitive shopping experience and implementing
+                    robust payment gateways.
+                  </p>
+                  <div>
+                    <a
+                      href="https://angular-ecommerce-sand.vercel.app/home"
+                      target="_blank"
+                      >VISIT</a
+                    >
+                    <a
+                      href="https://github.com/LukassF/angular-ecommerce"
+                      target="_blank"
+                      >CODE</a
+                    >
+                  </div>
+                </article>
+              </div>
+              <div class="project">
+                <article>
+                  <img src="./assets/message.png" alt="message-image" />
+                </article>
+                <article>
+                  <h2>CHATTER</h2>
+                  <h6>TECHSTACK: REACT, TYPESCRIPT, NODE JS</h6>
+                  <span></span>
+                  <p>
+                    Chat with friends and strangers alike, is the motto of the
+                    Chatter chat app. It offers a variety of features but the
+                    main and the most important one is the ability to take part
+                    in realtime chats with other logged in users. Due to the use
+                    of websockets the connection is seamless and navigation
+                    intuitive. Make sure to try it and chat with others!
+                  </p>
+                  <div>
+                    <a
+                      href="https://chatter-silk-eta.vercel.app"
+                      target="_blank"
+                      >VISIT</a
+                    >
+                    <a href="https://github.com/LukassF/chatter" target="_blank"
+                      >CODE</a
+                    >
+                  </div>
+                </article>
+              </div>
+            </div>
+            <button id="right" onclick="slideRight()">
+              <i class="fa fa-chevron-right"></i>
+            </button>
+          </article>
+          <div id="project-indicator">
+            <a class="active"></a>
+            <a></a>
+            <a></a>
+          </div>
+        </section>
+      </main>
+
+      <!-- ----------------- -->
+      <main class="services">
+        <aside class="page-indicator">
+          <h1 class="pi3">03</h1>
+          <div id="page-name-cont">
+            <div class="pi3"></div>
+            <p class="pi3">SERVICES</p>
+          </div>
+        </aside>
+
+        <section>
+          <article>
+            <h1 class="services-el">DEVELOPMENT IN VARIOUS AREAS</h1>
+            <div id="separator" class="services-el"></div>
+            <p id="main-p" class="services-el">
+              As a software developer, I specialize in translating conceptual
+              ideas into functional and robust software solutions. My expertise
+              lies in proficiently coding and implementing software
+              applications, adhering to best practices in programming and
+              utilizing various development frameworks. With a keen eye for
+              detail, I meticulously troubleshoot and debug code to ensure
+              optimal performance and reliability.
+            </p>
+          </article>
+
+          <ul>
+            <li class="services-el">
+              <div>
+                <img
+                  src="https://cdn-icons-png.flaticon.com/512/2721/2721609.png"
+                  alt="static-site"
+                />
+              </div>
+              <h3>STATIC SITES</h3>
+              <p>FRONTEND SIDE ONLY</p>
+            </li>
+            <li class="services-el">
+              <div>
+                <img
+                  src="https://static.thenounproject.com/png/390336-200.png"
+                  alt="fullstack-app"
+                />
+              </div>
+              <h3>FULLSTACK APPS</h3>
+              <p>FRONTEND AND BACKEND</p>
+            </li>
+            <li class="services-el">
+              <div><img src="./assets/server.png" alt="static-site" /></div>
+
+              <h3>ONLINE STORES</h3>
+              <p>ROBUST BACKEND</p>
+            </li>
+          </ul>
+        </section>
+      </main>
+
+      <!-- ----------------- -->
+      <main class="skills">
+        <aside class="page-indicator-dark">
+          <h1 class="pi4">04</h1>
+          <div id="page-name-cont">
+            <div class="pi4"></div>
+            <p class="pi4">SKILLS</p>
+          </div>
+        </aside>
+
+        <section>
+          <article>
+            <h3 class="skills-el">VARIOUS SKILLS</h3>
+
+            <h5 class="skills-el">TECHSTACK</h5>
+            <p class="skills-el">
+              I have experience with a multitude of both frontend and backend
+              technologies, along with the knowledge on how to connect the two
+              aforementioned realms to create visually appealing and functional
+              applications.
+            </p>
+
+            <h5 class="skills-el">SOFT SKILLS</h5>
+            <p class="skills-el">
+              Techstack is obviously not everything. There are some traits of
+              character that further boost my progress and a drive for
+              improvement. I love to work with others, but i have no problems
+              with developing alone. Moreover I consider myself to be a
+              meticulous person, almost a perfectionist.
+            </p>
+          </article>
+          <article class="skills-image">
+            <div>
+              <img
+                src="https://www.svgrepo.com/show/374144/typescript.svg"
+                alt="ts"
+              />
+              <h6>TYPESCRIPT</h6>
+            </div>
+            <div>
+              <img
+                src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d5/Tailwind_CSS_Logo.svg/320px-Tailwind_CSS_Logo.svg.png"
+                alt="tailwind"
+              />
+              <h6>TAILWIND</h6>
+            </div>
+            <div>
+              <img
+                src="https://download.logo.wine/logo/Bootstrap_(front-end_framework)/Bootstrap_(front-end_framework)-Logo.wine.png"
+                alt="bootstrap"
+              />
+              <h6>BOOTSTRAP</h6>
+            </div>
+            <div>
+              <img
+                src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/2300px-React-icon.svg.png"
+                alt="react"
+              />
+              <h6>REACT</h6>
+            </div>
+            <div>
+              <img
+                src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/cf/Angular_full_color_logo.svg/2048px-Angular_full_color_logo.svg.png"
+                alt="angular"
+              />
+              <h6>ANGULAR</h6>
+            </div>
+            <div>
+              <img
+                src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/95/Vue.js_Logo_2.svg/2367px-Vue.js_Logo_2.svg.png"
+                alt="vue"
+              />
+              <h6>VUE 3</h6>
+            </div>
+            <div>
+              <img
+                src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/27/PHP-logo.svg/2560px-PHP-logo.svg.png"
+                alt="php"
+              />
+              <h6>PHP</h6>
+            </div>
+            <div>
+              <img
+                src="https://upload.wikimedia.org/wikipedia/en/thumb/3/30/Java_programming_language_logo.svg/1200px-Java_programming_language_logo.svg.png"
+                alt="java"
+              />
+              <h6>JAVA</h6>
+            </div>
+            <div>
+              <img
+                src="https://static-00.iconduck.com/assets.00/node-js-icon-454x512-nztofx17.png"
+                alt="node"
+              />
+              <h6>NODE JS</h6>
+            </div>
+          </article>
+        </section>
+      </main>
+
+      <!-- ----------------- -->
+      <main class="contact">
+        <aside class="page-indicator">
+          <h1 class="pi5">05</h1>
+          <div id="page-name-cont">
+            <div class="pi5"></div>
+            <p class="pi5">CONTACT</p>
+          </div>
+        </aside>
+
+        <section>
+          <form class="form" onsubmit="sendEmail(event)" autocomplete="off">
+            <div>
+              <label for="fname">FIRST NAME</label>
+              <input type="text" id="fname" />
+            </div>
+            <div>
+              <label for="lname">LAST NAME</label>
+              <input
+                type="text"
+                id="lname"
+                oninput="fillEmail('name', event)"
+              />
+            </div>
+            <div>
+              <label for="email">EMAIL</label>
+              <input
+                type="email"
+                id="email"
+                oninput="fillEmail('email', event)"
+              />
+            </div>
+            <div>
+              <label for="subject">SUBJECT</label>
+              <input
+                type="text"
+                id="subject"
+                oninput="fillEmail('subject', event)"
+              />
+            </div>
+            <div id="mess-cont">
+              <label for="message">MESSAGE</label>
+              <textarea
+                id="message"
+                oninput="fillEmail('message', event)"
+              ></textarea>
+            </div>
+
+            <div id="send">
+              <button disabled class="send-button">SEND</button>
+            </div>
+          </form>
+        </section>
+      </main>
+    </section>
+
+    <script type="application/javascript">
+      let name = "",
+        email = "",
+        subject = "",
+        message = "",
+        acc = false;
+
+      const inputs = document.getElementsByTagName("input");
+      const textarea = document.querySelector("#message");
+      const sendButton = document.querySelector(".send-button");
+
+      const fillEmail = (arg, e) => {
+        acc = true;
+        for (let i = 0; i < inputs.length; i++) {
+          if (inputs[i].value === "" || textarea.value === "") acc = false;
+        }
+
+        if (acc) {
+          sendButton.disabled = false;
+        } else {
+          sendButton.disabled = true;
+        }
+
+        switch (arg) {
+          case "name":
+            name = e.target.value;
+            break;
+          case "email":
+            email = e.target.value;
+            break;
+          case "subject":
+            subject = e.target.value;
+            break;
+          case "message":
+            message = e.target.value;
+            break;
+          default:
+            return;
+        }
+      };
+
+      const sendEmail = (e) => {
+        e.preventDefault();
+        var params = {
+          name: name,
+          email: email,
+          subject: subject,
+          message: message,
+        };
+        const serviceID = "service_jcox09c";
+        const templateID = "template_ja7vq5m";
+
+        emailjs
+          .send(serviceID, templateID, params)
+          .then((res) => {
+            Swal.fire("Success!", "Email has been sent!", "success");
+          })
+          .catch((err) => {
+            Swal.fire(
+              "Something went wrong!",
+              "Email has not been sent, try again!",
+              "error"
+            );
+            console.log(err);
+          });
+      };
+    </script>
+
+    <script src="./public/functions.js" defer></script>
+    <script type="module" src="./public/main.js"></script>
+  </body>
+</html>

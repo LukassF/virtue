@@ -1,0 +1,111 @@
+@use "./mixins" as *;
+
+.hero {
+  height: 100vh;
+  background-color: $main;
+  display: grid;
+  grid-template-columns: 1fr 4fr;
+  overflow: hidden;
+  position: relative;
+  scroll-snap-align: center;
+
+  @media screen and (max-width: 780px) {
+    grid-template-columns: 1fr 3fr;
+  }
+
+  @media screen and (max-width: 600px) {
+    grid-template-columns: 1fr;
+    grid-template-rows: 5fr 1fr;
+  }
+
+  section {
+    display: grid;
+    grid-template-columns: 2fr 3fr;
+
+    @media screen and (max-width: 980px) {
+      grid-template-columns: 3fr 1fr;
+    }
+
+    @media screen and (max-width: 780px) {
+      grid-template-columns: 1fr;
+    }
+
+    article {
+      &:first-child {
+        @include flex(column, center, flex-start);
+        padding: 20px;
+        gap: 20px;
+
+        @media screen and (max-width: 600px) {
+          padding: 30px;
+          padding-top: 50px;
+          gap: 28px;
+        }
+        h2 {
+          color: $secondary;
+          overflow: hidden;
+          margin: 0%;
+          opacity: 0.8;
+
+          @media screen and (max-width: 620px) {
+            font-size: 1.1em;
+          }
+        }
+
+        div {
+          width: 100px;
+          height: 2.5px;
+          border-radius: 500px;
+          background-color: $secondary;
+
+          @media screen and (max-width: 600px) {
+            width: 100%;
+            height: 1.8px;
+          }
+        }
+
+        p {
+          padding: 0%;
+          margin: 0%;
+          font-size: 1.1em;
+          opacity: 0.4;
+          overflow: hidden;
+          line-height: 1.6em;
+
+          @media screen and (max-width: 620px) {
+            font-size: 0.9em;
+          }
+
+          @media screen and (max-width: 600px) {
+            line-height: 1.8em;
+          }
+        }
+      }
+
+      &:last-child {
+        overflow: hidden;
+        @include flex(row, flex-start, center);
+
+        img {
+          filter: grayscale(100%) opacity(50%);
+          height: 100%;
+          width: 100%;
+          object-fit: cover;
+        }
+
+        @media screen and (max-width: 980px) {
+          position: absolute;
+          right: 20px;
+
+          img {
+            filter: grayscale(100%) opacity(20%);
+          }
+        }
+
+        @media screen and (max-width: 620px) {
+          visibility: hidden;
+        }
+      }
+    }
+  }
+}

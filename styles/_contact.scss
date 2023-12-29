@@ -1,0 +1,134 @@
+@use "./mixins" as *;
+
+.contact {
+  height: 100vh;
+  background-color: $main;
+  display: grid;
+  grid-template-columns: 1fr 4fr;
+
+  @media screen and (max-width: 780px) {
+    grid-template-columns: 1fr 3fr;
+  }
+
+  @media screen and (max-width: 600px) {
+    grid-template-columns: 1fr;
+    grid-template-rows: 5fr 1fr;
+  }
+
+  section {
+    padding: 80px 40px;
+
+    @media screen and (max-width: 700px) {
+      padding: 60px 20px;
+    }
+
+    @media screen and (max-width: 600px) {
+      padding: 40px 20px;
+    }
+
+    form {
+      height: 100%;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-rows: 1fr 1fr 4fr 1fr;
+      gap: 20px;
+
+      @media screen and (max-width: 600px) {
+        grid-template-columns: 1fr !important;
+        grid-template-rows: 1fr 1fr 1fr 1fr 5fr 1fr;
+        gap: 8px;
+      }
+
+      div {
+        @include flex(column, center, stretch);
+        gap: 5px;
+        min-height: 50px;
+
+        label {
+          color: $secondary;
+          opacity: 0.8;
+          font-size: 0.8em;
+
+          @media screen and (max-width: 600px) {
+            font-size: 0.6em;
+          }
+        }
+        input {
+          padding: 6px 10px;
+          border: none;
+          border-radius: 6px;
+          background-color: rgba(255, 255, 255, 0.5);
+          outline: none;
+          font-weight: 100;
+          color: $secondary;
+          min-height: 30px;
+
+          @media screen and (max-width: 600px) {
+            min-height: auto;
+          }
+        }
+
+        &#mess-cont {
+          grid-column-start: 1;
+          grid-column-end: 3;
+          display: grid;
+          grid-template-rows: 1fr 8fr;
+          justify-content: stretch;
+
+          @media screen and (max-width: 600px) {
+            grid-column-start: 1;
+            grid-column-end: 1;
+          }
+
+          textarea {
+            resize: none;
+            padding: 6px 10px;
+            border: none;
+            border-radius: 6px;
+            background-color: rgba(255, 255, 255, 0.5);
+            outline: none;
+            font-weight: 100;
+            color: $secondary;
+          }
+        }
+      }
+
+      #send {
+        grid-column-start: 1;
+        grid-column-end: 3;
+        justify-content: center;
+        align-items: center;
+
+        @media screen and (max-width: 600px) {
+          grid-column-start: 1;
+          grid-column-end: 1;
+        }
+
+        button {
+          width: 60%;
+          background-color: transparent;
+          color: $secondary;
+          border: solid $secondary 1px;
+          border-radius: 0px;
+          cursor: pointer;
+          height: 40px;
+          font-size: 0.8em;
+          opacity: 0.6;
+
+          @media screen and (max-width: 600px) {
+            width: 100%;
+          }
+
+          &:hover {
+            opacity: 0.9;
+          }
+
+          &:disabled {
+            opacity: 0.2;
+            cursor: default;
+          }
+        }
+      }
+    }
+  }
+}

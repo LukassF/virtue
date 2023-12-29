@@ -1,0 +1,154 @@
+@use "./mixins" as *;
+
+.services {
+  overflow: hidden;
+  height: 100vh;
+  background-color: $main;
+  display: grid;
+  grid-template-columns: 1fr 4fr;
+
+  @media screen and (max-width: 780px) {
+    grid-template-columns: 1fr 3fr;
+  }
+
+  @media screen and (max-width: 600px) {
+    grid-template-columns: 1fr;
+    grid-template-rows: 5fr 1fr;
+  }
+
+  section {
+    padding: 20px;
+    @include flex(column, space-evenly, center);
+
+    article {
+      @include flex(column, center, center);
+
+      @media screen and (max-width: 550px) {
+        padding-top: 40px;
+      }
+      h1 {
+        text-align: center;
+        font-size: 1.5em;
+        color: $secondary;
+
+        @media screen and (max-width: 850px) {
+          font-size: 1.2em;
+        }
+        @media screen and (max-width: 550px) {
+          font-size: 1em;
+        }
+      }
+
+      #separator {
+        width: 40%;
+        height: 2px;
+        background-color: $secondary;
+        border-radius: 500px;
+        margin: 15px 0px;
+      }
+
+      #main-p {
+        font-size: 0.9em;
+        color: $secondary;
+        opacity: 0.6;
+        width: 70%;
+        line-height: 1.5;
+        text-align: center;
+
+        @media screen and (max-width: 850px) {
+          font-size: 0.8em;
+        }
+
+        @media screen and (max-width: 900px) {
+          width: 90%;
+        }
+      }
+    }
+
+    ul {
+      @include flex(row, space-between, center);
+      width: 70%;
+      padding: 0;
+      list-style: none;
+
+      @media screen and (max-width: 900px) {
+        width: 90%;
+      }
+
+      @media screen and (max-width: 550px) {
+        width: 100%;
+      }
+
+      li {
+        @include flex(column, center, center);
+        gap: 5px;
+        cursor: default;
+
+        &:hover {
+          div {
+            transform: scale(1.2);
+          }
+        }
+        div {
+          width: 80px;
+          aspect-ratio: 1/1;
+          position: relative;
+          overflow: hidden;
+          transition: all 0.3s;
+
+          @media screen and (max-width: 850px) {
+            width: 60px;
+          }
+
+          @media screen and (max-width: 550px) {
+            width: 45px;
+          }
+
+          //   @media screen and (max-width: 550px) {
+          //     position: absolute;
+          //   }
+
+          img {
+            object-fit: cover;
+            width: 100%;
+            height: 100%;
+            filter: grayscale(100%) opacity(60%);
+          }
+        }
+
+        h3 {
+          font-size: 1em;
+          font-weight: 400;
+          opacity: 0.8;
+          @media screen and (max-width: 850px) {
+            font-size: 0.8em;
+          }
+          @media screen and (max-width: 550px) {
+            font-size: 0.7em;
+          }
+
+          @media screen and (max-width: 500px) {
+            font-size: 0.6em;
+          }
+        }
+
+        p {
+          font-size: 0.8em;
+          opacity: 0.6;
+
+          @media screen and (max-width: 850px) {
+            font-size: 0.6em;
+          }
+
+          @media screen and (max-width: 550px) {
+            font-size: 0.5em;
+          }
+
+          @media screen and (max-width: 500px) {
+            display: none;
+          }
+        }
+      }
+    }
+  }
+}
