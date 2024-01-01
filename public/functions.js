@@ -26,7 +26,7 @@ const changeProject = (k) => {
 const slideLeft = () => {
   if (i > 0) {
     i--;
-    gallery.style.transform = `translateX(-${(100 / 3) * i}%)`;
+    gallery.style.transform = `translateX(-${(100 / 4) * i}%)`;
     left.classList.remove("disabled");
     right.classList.remove("disabled");
     changeProject(i);
@@ -36,12 +36,12 @@ const slideLeft = () => {
 };
 
 const slideRight = () => {
-  if (i < 2) {
+  if (i < 3) {
     i++;
-    gallery.style.transform = `translateX(-${(100 / 3) * i}%)`;
+    gallery.style.transform = `translateX(-${(100 / 4) * i}%)`;
     right.classList.remove("disabled");
     left.classList.remove("disabled");
     changeProject(i);
   }
-  if (i >= 2) right.classList.add("disabled");
+  if (i >= 3) right.classList.add("disabled");
 };
