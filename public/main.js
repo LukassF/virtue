@@ -79,9 +79,15 @@ gsap.from(".project-img", {
 
 gsap.from(".project-el", {
   scrollTrigger: { trigger: ".projects", start: "top center" },
-  duration: 0.8,
+  duration: 0.5,
   stagger: 0.1,
-  y: -40,
+  rotate: 5,
+  opacity: 0,
+});
+
+gsap.from("#background-arrows", {
+  scrollTrigger: { trigger: ".projects", start: "top center" },
+  duration: 0.8,
   opacity: 0,
 });
 

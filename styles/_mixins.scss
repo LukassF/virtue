@@ -20,3 +20,12 @@ $ternary: #a07d7e;
     background-position: 0%;
   }
 }
+
+@keyframes slide {
+  from {
+    transform: translate(-30%, -50%);
+  }
+  to {
+    transform: translate(-20%, -50%);
+  }
+}
