@@ -263,6 +263,9 @@
 }
 
 #background-arrows {
+  @media screen and (max-width: 600px) {
+    display: none;
+  }
   position: absolute;
   left: 0;
   top: 0;
