@@ -998,6 +998,11 @@ template {
   height: 100%;
   overflow: hidden;
 }
+@media screen and (max-width: 600px) {
+  #background-arrows {
+    display: none !important;
+  }
+}
 #background-arrows svg {
   position: absolute;
   top: 50%;
