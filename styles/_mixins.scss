@@ -23,9 +23,9 @@ $ternary: #a07d7e;
 
 @keyframes slide {
   from {
-    transform: translate(-30%, -50%);
+    transform: translateX(15%);
   }
   to {
-    transform: translate(-20%, -50%);
+    transform: translateX(20%);
   }
 }

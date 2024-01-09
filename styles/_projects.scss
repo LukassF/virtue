@@ -263,22 +263,24 @@
 }
 
 #background-arrows {
-  @media screen and (max-width: 600px) {
-    display: none !important;
-  }
-  position: absolute;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
+  // @media screen and (max-width: 600px) {
+  display: none !important;
+  // }
+  // @include flex(row, flex-end, center);
+  // position: absolute;
+  // left: 0;
+  // top: 0;
+  // width: 100%;
+  // height: 100%;
+  // overflow: hidden;
 
   svg {
+    // background-color: red;
     position: absolute;
-    top: 50%;
-    width: 200%;
-    height: 70%;
-    filter: opacity(30%);
-    animation: slide 2s infinite alternate linear;
+    bottom: 10%;
+    height: 8%;
+
+    filter: opacity(60%);
+    animation: slide 1s infinite alternate ease-in-out;
   }
 }
