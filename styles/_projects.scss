@@ -261,26 +261,3 @@
     }
   }
 }
-
-#background-arrows {
-  // @media screen and (max-width: 600px) {
-  display: none !important;
-  // }
-  // @include flex(row, flex-end, center);
-  // position: absolute;
-  // left: 0;
-  // top: 0;
-  // width: 100%;
-  // height: 100%;
-  // overflow: hidden;
-
-  svg {
-    // background-color: red;
-    position: absolute;
-    bottom: 10%;
-    height: 8%;
-
-    filter: opacity(60%);
-    animation: slide 1s infinite alternate ease-in-out;
-  }
-}

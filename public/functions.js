@@ -12,7 +12,6 @@ let i = 0;
 const gallery = document.getElementById("projects-cont");
 const right = document.getElementById("right");
 const left = document.getElementById("left");
-const arrows = document.getElementById("background-arrows");
 
 const project_indicators = Array.from(
   document.getElementById("project-indicator").children
@@ -42,7 +41,6 @@ const slideRight = () => {
     gallery.style.transform = `translateX(-${(100 / 4) * i}%)`;
     right.classList.remove("disabled");
     left.classList.remove("disabled");
-    arrows.style.display = "none";
     changeProject(i);
   }
   if (i >= 3) right.classList.add("disabled");

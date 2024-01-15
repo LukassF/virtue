@@ -74,7 +74,7 @@ gsap.from(".project-img", {
   duration: 0.8,
   delay: 0.3,
   opacity: 0,
-  scale: 0.9,
+  scale: 1.2,
 });
 
 gsap.from(".project-el", {
