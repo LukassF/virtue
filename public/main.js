@@ -81,7 +81,7 @@ gsap.from(".project-el", {
   scrollTrigger: { trigger: ".projects", start: "top center" },
   duration: 0.5,
   stagger: 0.1,
-  rotate: 5,
+  x: 50,
   opacity: 0,
 });
 
