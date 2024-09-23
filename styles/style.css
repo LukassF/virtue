@@ -805,7 +805,7 @@ template {
   width: 240vw;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  transition: transform 0.3s ease;
+  transition: transform 1s cubic-bezier(0.97, 0.17, 0.43, 0.95);
   scroll-snap-type: x mandatory;
   overflow-x: auto;
 }
@@ -937,7 +937,7 @@ template {
   color: #e3e3e3;
   opacity: 0.8;
   width: 80%;
-  line-height: 1.5;
+  line-height: 2;
 }
 @media screen and (max-width: 500px) {
   .projects section article #projects-cont .project article:last-of-type p {

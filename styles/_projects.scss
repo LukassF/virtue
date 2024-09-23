@@ -91,7 +91,7 @@
         }
         display: grid;
         grid-template-columns: repeat(3, 1fr);
-        transition: transform 0.3s ease;
+        transition: transform 1s cubic-bezier(0.97, 0.17, 0.43, 0.95);
         scroll-snap-type: x mandatory;
         overflow-x: auto;
         .project {
@@ -201,7 +201,7 @@
                 color: $main;
                 opacity: 0.8;
                 width: 80%;
-                line-height: 1.5;
+                line-height: 2;
 
                 @media screen and (max-width: 500px) {
                   font-size: 0.8em;

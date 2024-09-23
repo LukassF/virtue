@@ -154,13 +154,12 @@
             <div id="projects-cont">
               <div class="project">
                 <article>
-                  <div class="shadow"></div>
-                  <img
-                    class="project-img"
-                    src="./assets/group.png"
-                    alt="message-image"
-                    style="transform: scale(1.1) rotate(10deg)"
-                  />
+                  <canvas
+                    id="canvas_chat"
+                    width="400"
+                    height="400"
+                    style="opacity: 0.1"
+                  ></canvas>
                 </article>
                 <article>
                   <h2 class="project-el">CHATTER</h2>
@@ -190,19 +189,13 @@
               </div>
 
               <div class="project">
-                <article style="width: 90%">
-                  <div class="shadow"></div>
-
-                  <img
-                    src="./assets/music.png"
-                    alt="headphones-image"
-                    style="position: absolute; left: 40%; opacity: 0.8"
-                  />
-                  <img
-                    src="./assets/music2.png"
-                    alt="headphones-image"
-                    style="opacity: 0.4; transform: scale(1.3)"
-                  />
+                <article>
+                  <canvas
+                    id="canvas_spotify"
+                    width="400"
+                    height="400"
+                    style="opacity: 0.2"
+                  ></canvas>
                 </article>
                 <article>
                   <h2>MUSIC APP</h2>
@@ -233,14 +226,12 @@
               </div>
               <div class="project">
                 <article>
-                  <div class="shadow"></div>
-
-                  <img
-                    src="./assets/blockchain.png"
-                    alt="blockchain-image"
-                    style="opacity: 0.5; transform: scale(1.1)"
-                    width="60%"
-                  />
+                  <canvas
+                    id="canvas_nightly"
+                    width="400"
+                    height="400"
+                    style="opacity: 0.3"
+                  ></canvas>
                 </article>
                 <article>
                   <h2>
@@ -258,8 +249,8 @@
                   <span></span>
                   <p>
                     I have worked with the Nightly Team to create a beautiful,
-                    multichain crypto wallet, with a variety of features. I have
-                    worked mainly on the lending functionality for all
+                    multichain crypto wallet, with a variety of features. I
+                    placed my focus mainly on the lending functionality for all
                     blockchains, which required meticulous sdk integration, to
                     allow users to seamlessly transfer their assets to many
                     markets.
@@ -564,5 +555,6 @@
 
     <script src="functions.js" defer></script>
     <script type="module" src="./public/main.js"></script>
+    <script type="module" src="./public/rive.js"></script>
   </body>
 </html>
