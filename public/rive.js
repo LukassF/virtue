@@ -1,7 +1,7 @@
 import * as rive from "@rive-app/canvas";
 
 const chatterRive = new rive.Rive({
-  src: "/assets/chat.riv",
+  src: "public/assets/chat.riv",
   canvas: document.getElementById("canvas_chat"),
   autoplay: true,
   onLoad: () => {
@@ -10,7 +10,7 @@ const chatterRive = new rive.Rive({
 });
 
 const spotifyRive = new rive.Rive({
-  src: "/assets/spotify.riv",
+  src: "public/assets/spotify.riv",
   canvas: document.getElementById("canvas_spotify"),
   autoplay: true,
   onLoad: () => {
