@@ -826,8 +826,6 @@ template {
   padding: 20px 40px;
   scroll-snap-align: center;
   display: grid;
-  justify-content: center;
-  align-items: center;
   gap: 10px;
 }
 @media screen and (max-width: 800px) {
@@ -844,6 +842,8 @@ template {
 .projects section article #projects-cont .project article:first-of-type {
   position: absolute;
   right: 0;
+  top: 50%;
+  transform: translateY(-50%);
   width: 70%;
   opacity: 0.5;
   display: flex;
@@ -858,26 +858,30 @@ template {
   height: 100%;
   box-shadow: 0 0 60px 60px #2e364a inset;
 }
-.projects section article #projects-cont .project article:first-of-type img {
-  filter: invert(100%) opacity(60%);
+.projects section article #projects-cont .project article:first-of-type canvas {
+  filter: opacity(60%);
   -o-object-fit: cover;
      object-fit: cover;
 }
 @media screen and (max-width: 800px) {
   .projects section article #projects-cont .project article:first-of-type {
     position: absolute;
-    height: 80%;
+    width: 100%;
   }
-  .projects section article #projects-cont .project article:first-of-type img {
-    filter: invert(100%) opacity(50%);
-    -o-object-fit: cover;
-       object-fit: cover;
+  .projects section article #projects-cont .project article:first-of-type canvas {
+    filter: opacity(20%) !important;
+  }
+}
+@media screen and (max-width: 600px) {
+  .projects section article #projects-cont .project article:first-of-type {
+    visibility: hidden;
   }
 }
 .projects section article #projects-cont .project article:last-of-type {
-  width: 70%;
+  width: 40%;
   height: 100%;
   padding: 0px 40px;
+  gap: 10px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -886,6 +890,7 @@ template {
 @media screen and (max-width: 800px) {
   .projects section article #projects-cont .project article:last-of-type {
     padding: 0px 20px;
+    width: 60%;
   }
 }
 @media screen and (max-width: 600px) {
@@ -906,38 +911,11 @@ template {
     font-size: 1.2em;
   }
 }
-.projects section article #projects-cont .project article:last-of-type h6 {
-  margin-top: 10px;
-  padding: 0;
-  color: #e3e3e3;
-  opacity: 0.5;
-  overflow: hidden;
-}
-@media screen and (max-width: 500px) {
-  .projects section article #projects-cont .project article:last-of-type h6 {
-    font-size: 0.6em;
-  }
-}
-.projects section article #projects-cont .project article:last-of-type span {
-  width: 150px;
-  opacity: 0.5;
-  height: 1.5px;
-  border-radius: 500px;
-  background-color: #e3e3e3;
-  margin: 10px 0px;
-}
-@media screen and (max-width: 500px) {
-  .projects section article #projects-cont .project article:last-of-type span {
-    height: 1.5px;
-  }
-}
 .projects section article #projects-cont .project article:last-of-type p {
   padding: 0;
   margin: 0;
-  font-size: 0.9em;
+  font-size: 0.8em;
   color: #e3e3e3;
-  opacity: 0.8;
-  width: 80%;
   line-height: 2;
 }
 @media screen and (max-width: 500px) {
@@ -959,7 +937,6 @@ template {
 }
 .projects section article #projects-cont .project article:last-of-type div {
   overflow: hidden;
-  margin-top: 20px;
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
@@ -1104,7 +1081,7 @@ template {
 }
 @media screen and (max-width: 550px) {
   .services section ul {
-    width: 100%;
+    display: none;
   }
 }
 .services section ul li {
@@ -1205,21 +1182,32 @@ template {
   display: grid;
   grid-template-columns: 1fr 2fr;
 }
-@media screen and (max-width: 850px) {
+@media screen and (max-width: 900px) {
   .skills section {
     grid-template-columns: 1fr;
   }
 }
 .skills section article:first-child {
   padding: 20px;
+  gap: 20px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
 }
-.skills section article:first-child h3 {
+.skills section article:first-child h2 {
   color: #e3e3e3;
   opacity: 0.8;
+}
+@media screen and (max-width: 850px) {
+  .skills section article:first-child h2 {
+    font-size: 1.2em;
+  }
+}
+@media screen and (max-width: 550px) {
+  .skills section article:first-child h2 {
+    font-size: 1em;
+  }
 }
 .skills section article:first-child h5 {
   color: #e3e3e3;
@@ -1236,12 +1224,12 @@ template {
 .skills section article:first-child p {
   color: #e3e3e3;
   opacity: 0.7;
-  font-size: 0.7em;
+  font-size: 0.9em;
   line-height: 1.5;
 }
 @media screen and (max-width: 600px) {
   .skills section article:first-child p {
-    line-height: 2.4;
+    line-height: 1.4;
     font-size: 0.8em;
   }
 }
@@ -1252,7 +1240,7 @@ template {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
 }
-@media screen and (max-width: 850px) {
+@media screen and (max-width: 900px) {
   .skills section article:last-child {
     position: absolute;
     width: 80%;

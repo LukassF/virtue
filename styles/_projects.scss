@@ -99,26 +99,21 @@
           position: relative;
           padding: 20px 40px;
           scroll-snap-align: center;
-
           display: grid;
-          // grid-template-columns: 2fr 3fr;
-          justify-content: center;
-          align-items: center;
           gap: 10px;
-
           @media screen and (max-width: 800px) {
             grid-template-columns: 1fr;
           }
-
           @media screen and (max-width: 600px) {
             width: calc(100vw - 60px);
             padding: 10px 30px;
           }
-
           article {
             &:first-of-type {
               position: absolute;
               right: 0;
+              top: 50%;
+              transform: translateY(-50%);
               width: 70%;
               opacity: 0.5;
               .shadow {
@@ -129,30 +124,34 @@
                 box-shadow: 0 0 60px 60px #2e364a inset;
               }
               @include flex(row, center, center);
-              img {
-                filter: invert(100%) opacity(60%);
+              canvas {
+                filter: opacity(60%);
                 object-fit: cover;
               }
 
               @media screen and (max-width: 800px) {
                 position: absolute;
-                height: 80%;
+                width: 100%;
 
-                img {
-                  filter: invert(100%) opacity(50%);
-                  object-fit: cover;
+                canvas {
+                  filter: opacity(20%) !important;
                 }
+              }
+
+              @media screen and (max-width: 600px) {
+                visibility: hidden;
               }
             }
 
             &:last-of-type {
-              // background-color: aliceblue;
-              width: 70%;
+              width: 40%;
               height: 100%;
               padding: 0px 40px;
+              gap: 10px;
               @include flex(column, center, flex-start);
               @media screen and (max-width: 800px) {
                 padding: 0px 20px;
+                width: 60%;
               }
               @media screen and (max-width: 600px) {
                 padding: 0px;
@@ -170,38 +169,11 @@
                 }
               }
 
-              h6 {
-                margin-top: 10px;
-                padding: 0;
-                color: $main;
-                opacity: 0.5;
-                overflow: hidden;
-
-                @media screen and (max-width: 500px) {
-                  font-size: 0.6em;
-                }
-              }
-
-              span {
-                width: 150px;
-                opacity: 0.5;
-                height: 1.5px;
-                border-radius: 500px;
-                background-color: $main;
-                margin: 10px 0px;
-
-                @media screen and (max-width: 500px) {
-                  height: 1.5px;
-                }
-              }
-
               p {
                 padding: 0;
                 margin: 0;
-                font-size: 0.9em;
+                font-size: 0.8em;
                 color: $main;
-                opacity: 0.8;
-                width: 80%;
                 line-height: 2;
 
                 @media screen and (max-width: 500px) {
@@ -221,7 +193,6 @@
 
               div {
                 overflow: hidden;
-                margin-top: 20px;
                 @include flex(row, flex-start, center);
                 gap: 10px;
 

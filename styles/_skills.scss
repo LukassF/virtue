@@ -21,17 +21,25 @@
     display: grid;
     grid-template-columns: 1fr 2fr;
 
-    @media screen and (max-width: 850px) {
+    @media screen and (max-width: 900px) {
       grid-template-columns: 1fr;
     }
     article {
       &:first-child {
         padding: 20px;
+        gap: 20px;
         @include flex(column, center, flex-start);
 
-        h3 {
+        h2 {
           color: $main;
           opacity: 0.8;
+
+          @media screen and (max-width: 850px) {
+            font-size: 1.2em;
+          }
+          @media screen and (max-width: 550px) {
+            font-size: 1em;
+          }
         }
 
         h5 {
@@ -49,18 +57,18 @@
         p {
           color: $main;
           opacity: 0.7;
-          font-size: 0.7em;
+          font-size: 0.9em;
           line-height: 1.5;
 
           @media screen and (max-width: 600px) {
-            line-height: 2.4;
+            line-height: 1.4;
             font-size: 0.8em;
           }
         }
       }
 
       &:last-child {
-        @media screen and (max-width: 850px) {
+        @media screen and (max-width: 900px) {
           position: absolute;
           width: 80%;
           height: 100%;
